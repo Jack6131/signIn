@@ -1,3 +1,7 @@
+
+FOR MORE INFORMATION GO TO
+https://docs.amplify.aws/react-native/build-a-backend/auth/set-up-auth/
+
 Getting Started Read Me
 Do this first
 
