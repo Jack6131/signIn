@@ -1,3 +1,7 @@
+# Run APP
+	npx expo run:android
+
+
 # Navigation
   LIST OF NPM INSTALLS:
 	
