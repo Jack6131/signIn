@@ -1,20 +1,40 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { Button } from 'react-native';
+import 'react-native-url-polyfill/auto';
+import 'react-native-get-random-values';
+import { Amplify } from 'aws-amplify';
+import { Authenticator, useAuthenticator } from '@aws-amplify/ui-react-native';
+import Home from './src/pages/Home';
+import About from './src/pages/About';
+import amplifyconfig from './src/amplifyconfiguration.json'
 
-export default function App() {
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+
+Amplify.configure(amplifyconfig);
+
+function SignOutButton() {
+  const { signOut } = useAuthenticator();
+  return <Button title="Sign Out" onPress={signOut} />;
+}
+const Tab =createBottomTabNavigator()
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Authenticator.Provider>
+      <Authenticator>
+        <SignOutButton/> 
+        <NavigationContainer>
+          <Tab.Navigator>
+            <Tab.Screen name="Home" component={Home}/>
+            <Tab.Screen name="About"component={About}/>
+          </Tab.Navigator>
+
+        </NavigationContainer>
+        
+      </Authenticator>
+    </Authenticator.Provider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
