@@ -3,19 +3,18 @@ import { Pressable,StyleSheet, Text, View,TouchableOpacity, Modal,Button } from 
 import React,{useState} from 'react';
 import {MaterialIcons} from '@expo/vector-icons'
 
-export default function AddItem({setModalVisible:func}){
+export default function AddItem(){
    
     
     
     return (
        
             <View style={style.container}>
-                 <Modal>
+             
                 <Text>Hello World</Text>
-                <Button onPress={()=>func(false)} title='bye'>
-                    
-                </Button>
-                </Modal>
+                
+                
+               
             </View>
             
         
@@ -24,6 +23,10 @@ export default function AddItem({setModalVisible:func}){
 
 const style = StyleSheet.create({
     container:{
-        flex:.3,
+        alignContent:'center',
+        position:'relative',
+        flex:.1,
+        justifyContent:'center',
+        alignItems:'center',
     }
 })
