@@ -13,7 +13,8 @@ import GuestCard from "../components/guestCard";
 
 export default function Guests(){
   //Since we have no backend this is just to load in dummy info
-    const guests:Guest[]=[{
+    const guests:Guest[]=
+    [{
         name:'john',
         permissions:'none'
     },
@@ -21,7 +22,7 @@ export default function Guests(){
         name:'Peter',
         permissions:'none'
     }
-]
+  ]
     return(
         <View style={styles.container}>
         {/*HEADER*/}
