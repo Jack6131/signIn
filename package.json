@@ -17,6 +17,8 @@
     "@react-native-community/netinfo": "^11.3.1",
     "@react-navigation/bottom-tabs": "^6.5.20",
     "@react-navigation/native": "^6.1.17",
+    "@rneui/base": "^4.0.0-rc.7",
+    "@rneui/themed": "^4.0.0-rc.8",
     "@types/react": "~18.2.45",
     "aws-amplify": "^6.0.21",
     "expo": "~50.0.14",
