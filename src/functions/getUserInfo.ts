@@ -1,17 +1,19 @@
 
 import { getCurrentUser } from 'aws-amplify/auth';
+import { configureLayoutAnimationBatch } from 'react-native-reanimated/lib/typescript/reanimated2/core';
 
 
 
 
 //gets current user session using AWS's getCurrentUserFunction
-export default async function currentAuthenticatedUser() {
+export default async function currentAuthenticatedUser(){
     try {
       const {signInDetails } = await getCurrentUser();
-      console.log(`The username: ${signInDetails.loginId}`);
-      return signInDetails
+
+      return signInDetails.loginId
     } catch (err) {
       console.log(err);
-      return err
+      
+      return "wrong"
     }
   }

@@ -27,7 +27,7 @@ function App() {
     <Authenticator.Provider>
       <Authenticator>
         
-        <SignOutButton/> 
+        
         <Start></Start>
         
       </Authenticator>
