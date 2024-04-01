@@ -50,3 +50,6 @@ Step 1: run 'amplify add auth'
 	npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context 	
  	
   	npm install @react-native-community/masked-view(dependencies for bottom tabs and navigator)
+
+# Other Dependencies
+	npm install @rneui/themed @rneui/base (is used for profile circles known as avatars)
