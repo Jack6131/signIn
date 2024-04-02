@@ -13,6 +13,9 @@ function resolvePromises(){
 //const user=currentAuthenticatedUser()
 export default  function Profile(){
    const [user,setUser]=useState(null)
+
+
+   //Gets the authenticated user
    useEffect(()=>{
     const fetchUser = ()=>{
         return currentAuthenticatedUser()

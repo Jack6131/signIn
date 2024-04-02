@@ -16,4 +16,4 @@ export default async function currentAuthenticatedUser(){
       
       return "wrong"
     }
-  }
+}
