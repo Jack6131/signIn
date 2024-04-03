@@ -6,17 +6,19 @@ interface Icon {
 	iconColor?: string;
 }
 
+interface IconParams {
+	deviceType?: string;
+	action?: string;
+}
+
 /**
  * Returns the name, type, and color for an icon based on device action or device type
  * @param deviceType - The type of device object.
  * @param action - The action to be performed on the device.
  * @returns Icon object
  */
-export const getIcon = (deviceType: string, action: string): Icon => {
-	let icon: Icon = {
-		iconName: '',
-		iconType: ''
-	};
+export const getIcon = ({ deviceType, action }: IconParams): Icon => {
+	let icon: Icon;
 
 	if (action) {
 		icon = getActionIconByAction(action);
@@ -33,10 +35,7 @@ export const getIcon = (deviceType: string, action: string): Icon => {
 };
 
 const getActionIconByAction = (action: string): Icon => {
-	let icon: Icon = {
-		iconName: '',
-		iconType: ''
-	};
+	let icon: Icon;
 
 	if (action == 'lock') {
 		icon = {
@@ -61,10 +60,7 @@ const getActionIconByAction = (action: string): Icon => {
 };
 
 const getActionIconByDevice = (deviceType: string) => {
-	let icon: Icon = {
-		iconName: '',
-		iconType: ''
-	};
+	let icon: Icon;
 
 	if (deviceType.includes('doorbell')) {
 		icon = {
