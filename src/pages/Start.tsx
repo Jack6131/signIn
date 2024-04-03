@@ -5,7 +5,7 @@ import 'react-native-get-random-values';
 import { Amplify } from 'aws-amplify';
 import Profile from './Profile';
 import {Authenticator, useAuthenticator } from '@aws-amplify/ui-react-native';
-import Home from './Home';
+import Logs from './Home';
 import Guest from './Guest';
 import amplifyconfig from '../amplifyconfiguration.json'
 import Devices from './Devices';
@@ -27,7 +27,7 @@ export default function Start(){
             tabBarIcon: ({ color, size }) => {
               let iconName;
     
-              if (route.name === 'Home') {
+              if (route.name === 'Logs') {
                 iconName = 'home'; // Example icon name from Ionicons
               } else if (route.name === 'Guest') {
                 iconName = 'people'; // Example icon name from Ionicons
@@ -43,7 +43,7 @@ export default function Start(){
           })}
       
           >
-            <Tab.Screen name="Home" component={Home}/>
+            <Tab.Screen name="Home" component={Logs}/>
             <Tab.Screen name="Guest"component={Guest}/>
             <Tab.Screen name="Devices"component={Devices}/>
             <Tab.Screen name="Profile"component={Profile}/>

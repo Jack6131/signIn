@@ -6,7 +6,7 @@ import {View,StyleSheet,Text} from 'react-native'
 
 
 
-export default function Home(){
+export default function Logs(){
 
     return(
     <View style={styles.container}>
