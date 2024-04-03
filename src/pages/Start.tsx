@@ -21,6 +21,8 @@ export default function Start(){
     return(
         <NavigationContainer>
           <Tab.Navigator
+
+          //is used for icons for navbar
           screenOptions={({ route }) => ({
             tabBarIcon: ({ color, size }) => {
               let iconName;
