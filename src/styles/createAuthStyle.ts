@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { Dimensions } from '../types';
+import { Dimensions } from '../interfaces/StylesInterfaces';
 
 /**
  * Creates a general Auth stylesheet
