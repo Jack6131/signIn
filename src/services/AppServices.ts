@@ -3,6 +3,8 @@ import { Alert, Platform } from 'react-native';
 import * as Notifications from 'expo-notifications';
 import { AccountData } from '../interfaces/AuthInterfaces';
 
+const API_BASE_URL = 'https://c8zta83ta5.execute-api.us-east-1.amazonaws.com/test';
+
 /**
  * Registers the device for push notifications.
  *
@@ -84,7 +86,7 @@ export const getCurrentSession = async (): Promise<AccountData> => {
  */
 export const checkUserExists = async (idToken: string, email: string) => {
 	try {
-		const response = await fetch('https://c8zta83ta5.execute-api.us-east-1.amazonaws.com/test/checkuserexists', {
+		const response = await fetch(`${API_BASE_URL}/checkUserExists`, {
 			method: 'POST',
 			headers: {
 				Authorization: `Bearer ${idToken}`,
@@ -116,7 +118,7 @@ export const checkUserExists = async (idToken: string, email: string) => {
  */
 export const changeRole = async (idToken: string, user_type: string) => {
 	try {
-		const response = await fetch('https://c8zta83ta5.execute-api.us-east-1.amazonaws.com/test/toggleusertype', {
+		const response = await fetch(`${API_BASE_URL}/toggleusertype`, {
 			method: 'POST',
 			headers: {
 				Authorization: `Bearer ${idToken}`,
@@ -147,7 +149,7 @@ export const changeRole = async (idToken: string, user_type: string) => {
  */
 export const changeRadius = async (idToken: string, radius: number) => {
 	try {
-		const response = await fetch('https://c8zta83ta5.execute-api.us-east-1.amazonaws.com/test/gps', {
+		const response = await fetch(`${API_BASE_URL}/gps`, {
 			method: 'PUT',
 			headers: {
 				Authorization: 'Bearer ' + idToken,
